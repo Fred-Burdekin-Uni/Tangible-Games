@@ -135,5 +135,36 @@ int main() {
     }
 
 
+    if (!player1Drawing && !player2Drawing && !player3Drawing) {
+
+        if (player1Hand <= 21 && player1Hand > player2Hand && player1Hand > player3Hand || !player1Bust && player2Bust && player3Bust) {
+            cout << "Player 1 wins" << endl;
+        }
+
+        if (player2Hand <= 21 && player2Hand > player1Hand && player2Hand > player3Hand || player1Bust && !player2Bust && player3Bust) {
+            cout << "Player 2 wins" << endl;
+        }
+
+        if (player3Hand <= 21 && player3Hand > player1Hand && player3Hand > player2Hand || player1Bust && player2Bust && !player3Bust) {
+            cout << "Player 3 wins" << endl;
+        }
+
+        if (player1Hand == player2Hand == player3Hand) {
+            cout << "All players draw";
+        }
+
+        if (player1Hand == player2Hand) {
+            cout << "player 1 and 2 draw";
+        }
+
+        if (player2Hand == player3Hand) {
+            cout << "player 2 and 3 draw";
+        }
+
+        if (player1Hand == player3Hand) {
+            cout << "player 1 and 3 draw";
+        }
+    }
+
 	return 0;
 }

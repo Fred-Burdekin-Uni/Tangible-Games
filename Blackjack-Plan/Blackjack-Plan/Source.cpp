@@ -50,5 +50,90 @@ int main() {
 
         dealing = false;
     }
+    while (player1Drawing) {
+        if (player1Hand <= 21) {
+            cout << "Player 1 Would you like to draw 1 = yes 0 = no" << endl;
+            cin >> userInput;
+
+            if (userInput == 1) {
+                draw = rand() % cards.size();
+                player1Hand += cards[draw];
+                cards.erase(cards.begin() + draw);
+                cout << player1Hand << endl;
+            }
+            else if (userInput == 0) {
+                player1Drawing = false;
+            }
+            else {
+                cout << "invalid input" << endl;
+            }
+        }
+        else {
+            cout << "PLayer went bust" << endl;
+            player1Drawing = false;
+            player1Bust = true;
+
+            break;
+        }
+    }
+
+
+    while (player2Drawing) {
+        if (player2Hand <= 21) {
+            cout << "Player 2 Would you like to draw 1 = yes 0 = no" << endl;
+            cin >> userInput;
+
+            if (userInput == 1) {
+                draw = rand() % cards.size();
+                player2Hand += cards[draw];
+                cards.erase(cards.begin() + draw);
+                cout << player2Hand << endl;
+            }
+            else if (userInput == 0) {
+                player2Drawing = false;
+            }
+            else {
+                cout << "invalid input" << endl;
+            }
+        }
+        else {
+            cout << "Player went bust" << endl;
+            player2Drawing = false;
+            player2Bust = true;
+
+            break;
+        }
+    }
+
+
+
+    while (player3Drawing) {
+        if (player3Hand <= 21) {
+            cout << "Player 3 Would you like to draw 1 = yes 0 = no" << endl;
+            cin >> userInput;
+
+            if (userInput == 1) {
+                draw = rand() % cards.size();
+                player3Hand += cards[draw];
+                cards.erase(cards.begin() + draw);
+                cout << player3Hand << endl;
+            }
+            else if (userInput == 0) {
+                player3Drawing = false;
+            }
+            else {
+                cout << "invalid input" << endl;
+            }
+        }
+        else {
+            cout << "Player went bust" << endl;
+            player3Drawing = false;
+            player3Bust = true;
+
+            break;
+        }
+    }
+
+
 	return 0;
 }

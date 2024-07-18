@@ -59,7 +59,7 @@ void loop(){
     int userInput = Serial.parseInt(); 
     if (userInput == 1) { 
       resetGame(); // restart the game 
-    } else if (userInput = 0) { 
+    } else if (userInput == 0) { 
       Serial.println("game over."); 
       while (true); // stop execution 
     } else { 
@@ -90,7 +90,7 @@ void loop(){
       if (!gamePlaying) { 
         gamePlaying = true; // start the game 
         dealInitialCards(); // deal initial cards to players 
-       
+      }
     } 
   } 
 }

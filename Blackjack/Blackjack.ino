@@ -142,13 +142,13 @@ int drawCard() {
 } 
 
 void playerTurn(){
-
+  // manage player's turn
 }
 
 void determineWinner(){
-
+  // determine the winner based on hand values and bust status
 }
 
 void resetGame(){
-  
+  // reset game state for a new round
 }

@@ -123,3 +123,20 @@ void dealInitialCards() {
   Serial.print("starting hand for player 3: "); 
   Serial.println(player3Hand); 
 }
+
+int drawCard() { 
+  // draw a card from the deck 
+  if (numCards == 0) { 
+    Serial.println("no more cards to draw"); 
+    return 0; 
+  } 
+
+  int index = random(numCards); // get random index for card 
+  int cardValue = cards[index]; // get card value 
+  // remove the drawn card from the array 
+  for (int i = index; i < numCards - 1; i++) { 
+    cards[i] = cards[i + 1]; 
+  } 
+  numCards--; // reduce the number of available cards 
+  return cardValue; 
+} 

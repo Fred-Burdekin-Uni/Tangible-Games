@@ -140,3 +140,15 @@ int drawCard() {
   numCards--; // reduce the number of available cards 
   return cardValue; 
 } 
+
+void playerTurn(){
+
+}
+
+void determineWinner(){
+
+}
+
+void resetGame(){
+  
+}

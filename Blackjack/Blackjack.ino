@@ -160,13 +160,13 @@ void playerTurn(int player, int& hand, bool& drawing, bool& bust){
         Serial.print(player); 
         Serial.println(hand); 
         } else if (userInput == 0) { 
-          drawing = fals; // stop drawing if player chooses not to draw 
+          drawing = false; // stop drawing if player chooses not to draw 
         }  
         else { 
           Serial.println("invalid input"); 
         } 
       } else { 
-  Serial.print("plater "); 
+  Serial.print("player "); 
   Serial.print(player); 
   Serial.println(" went bust"); 
   drawing = false; // stop drawing if player goes bust 

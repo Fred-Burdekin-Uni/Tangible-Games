@@ -141,8 +141,37 @@ int drawCard() {
   return cardValue; 
 } 
 
-void playerTurn(){
+void playerTurn(int player, int& hand, bool& drawing, bool& bust){
   // manage player's turn
+  if (hand <= 21) { 
+
+      Serial.print("player "); 
+      Serial.print(player); 
+      Serial.println(" would you like to draw? (1 = yes, 0 = no)");  
+
+      while (Serial.available() == 0) { 
+      // wait for input 
+      } 
+      int userInput = Serial.parseInt(); 
+
+      if (userInput == 1) { 
+        hand += drawCard(); // add drawn card to player's hand 
+        Serial.print("player "); 
+        Serial.print(player); 
+        Serial.println(hand); 
+        } else if (userInput == 0) { 
+          drawing = fals; // stop drawing if player chooses not to draw 
+        }  
+        else { 
+          Serial.println("invalid input"); 
+        } 
+      } else { 
+  Serial.print("plater "); 
+  Serial.print(player); 
+  Serial.println(" went bust"); 
+  drawing = false; // stop drawing if player goes bust 
+  bust = true; // mark player as bust 
+  } 
 }
 
 void determineWinner(){
@@ -151,4 +180,5 @@ void determineWinner(){
 
 void resetGame(){
   // reset game state for a new round
+  
 }

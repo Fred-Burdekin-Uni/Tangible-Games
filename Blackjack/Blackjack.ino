@@ -94,3 +94,13 @@ void loop(){
     } 
   } 
 }
+
+void initializeCards() { 
+  // initialize the cards array with card values 
+  int initialCards[48] = {2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}; 
+
+  for (int i = 0; i < 48; i++) { 
+  cards[i] = initialCards[i]; 
+  } 
+  numCards = 48; // reset the number of cards 
+} 

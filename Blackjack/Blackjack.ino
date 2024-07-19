@@ -95,6 +95,7 @@ void loop(){
   } 
 }
 
+
 void initializeCards() { 
   // initialize the cards array with card values 
   int initialCards[48] = {2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}; 
@@ -103,4 +104,22 @@ void initializeCards() {
   cards[i] = initialCards[i]; 
   } 
   numCards = 48; // reset the number of cards 
-} 
+}
+
+
+void dealInitialCards() { 
+  // deal initial two cards to each player 
+  for (int i = 0; i < 2; i++) { 
+  player1Hand += drawCard(); 
+  player2Hand += drawCard(); 
+  player3Hand += drawCard(); 
+  } 
+
+  // print initial hands to the serial monitor
+  Serial.print("starting hand for player 1: "); 
+  Serial.println(player1Hand); 
+  Serial.print("starting hand for player 2: "); 
+  Serial.println(player2Hand); 
+  Serial.print("starting hand for player 3: "); 
+  Serial.println(player3Hand); 
+}

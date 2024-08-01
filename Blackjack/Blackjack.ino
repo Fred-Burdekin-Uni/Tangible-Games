@@ -187,6 +187,15 @@ void determineWinner(){
   } 
 }
 
+
+bool isSameUID(byte *uid1, byte *uid2) { 
+// compare two uids to check if they are the same 
+for (byte i = 0; i < 4; i++) {
+if (uid1[i] != uid2[i]) return false;
+}
+
+
+
 void resetGame(){
   // reset game state for a new round
   

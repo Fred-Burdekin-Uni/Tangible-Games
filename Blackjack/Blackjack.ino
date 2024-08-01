@@ -197,8 +197,20 @@ return true;
 }
 
 
-
 void resetGame(){
   // reset game state for a new round
-  
+  player1Hand = 0; 
+  player2Hand = 0; 
+  player3Hand = 0; 
+  player1Drawing = true; 
+  player2Drawing = true; 
+  player3Drawing = true; 
+  player1Bust = false; 
+  player2Bust = false; 
+  player3Bust = false; 
+  gamePlaying = true; 
+  waitingForRestart = false; 
+
+  initializeCards(); // reinitialize the cards 
+  dealInitialCards(); // deal initial cards to players 
 }

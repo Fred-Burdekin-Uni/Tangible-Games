@@ -193,6 +193,8 @@ bool isSameUID(byte *uid1, byte *uid2) {
 for (byte i = 0; i < 4; i++) {
 if (uid1[i] != uid2[i]) return false;
 }
+return true;
+}
 
 
 

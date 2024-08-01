@@ -176,6 +176,15 @@ void playerTurn(int player, int& hand, bool& drawing, bool& bust){
 
 void determineWinner(){
   // determine the winner based on hand values and bust status
+  if (player1Hand <= 21 && (player1Hand > player2Hand && player1Hand > player3Hand || !player1Bust && player2Bust && player3Bust)) { 
+    Serial.println("player 1 wins"); 
+  } else if (player2Hand <= 21 && (player2Hand > player1Hand && player2Hand > player3Hand || player1Bust && !player2Bust && player3Bust)) { 
+    Serial.println("player 2 wins"); 
+  } else if (player3Hand <= 21 && (player3Hand > player1Hand && player3Hand > player2Hand || player1Bust && player2Bust && !player3Bust)) { 
+    Serial.println("player 3 wins"); 
+  } else { 
+    Serial.println("it's a draw"); 
+  } 
 }
 
 void resetGame(){
